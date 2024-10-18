@@ -14,7 +14,7 @@ export default function Productos() {
   useEffect(() => {
     // Cargar productos desde Supabase
     const fetchProductos = async () => {
-      let { data, error } = await supabase.from('productos').select('*');
+      let { data, error } = await supabase.from('productos_bruma').select('*');
       if (error) console.error('Error fetching productos:', error);
       else setProductos(data);
     };
@@ -51,7 +51,7 @@ export default function Productos() {
       };
 
       // Insertar el producto con el nombre de la imagen en la base de datos
-      const { data, error } = await supabase.from('productos').insert([productoConImagen]);
+      const { data, error } = await supabase.from('productos_bruma').insert([productoConImagen]);
       if (error) console.error('Error insertando producto:', error);
       else setProductos([...productos, data[0]]);
     } else {

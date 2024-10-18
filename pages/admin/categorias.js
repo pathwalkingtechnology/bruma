@@ -1,13 +1,13 @@
 import { useEffect, useState } from 'react';
 import { supabase } from '../../supabaseClient';
 
-export default function Categorias() {
+export default function CategoriasBruma() {
   const [categorias, setCategorias] = useState([]);
   const [nuevaCategoria, setNuevaCategoria] = useState({ nombre: '', descripcion: '' });
 
   useEffect(() => {
     const fetchCategorias = async () => {
-      let { data, error } = await supabase.from('categorias').select('*');
+      let { data, error } = await supabase.from('categorias_bruma').select('*');
       if (error) console.error('Error fetching categorias:', error);
       else setCategorias(data);
     };
@@ -20,14 +20,14 @@ export default function Categorias() {
 
   const agregarCategoria = async (e) => {
     e.preventDefault();
-    const { data, error } = await supabase.from('categorias').insert([nuevaCategoria]);
+    const { data, error } = await supabase.from('categorias_bruma').insert([nuevaCategoria]);
     if (error) console.error('Error insertando categoría:', error);
     else setCategorias([...categorias, data[0]]);
   };
 
   return (
     <div>
-      <h1>Gestionar Categorías</h1>
+      <h1>Gestionar Categorías de Bruma</h1>
       <form onSubmit={agregarCategoria}>
         <input
           type="text"
