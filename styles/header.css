@@ -1,0 +1,23 @@
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+header {
+  @apply bg-[#FF6370] shadow-md py-4;
+}
+
+header .container {
+  @apply mx-auto flex justify-between items-center px-4;
+}
+
+header nav {
+  @apply space-x-4;
+}
+
+header nav a {
+  @apply text-lg font-medium hover:text-[#2281B8] transition;
+}
+
+header .carrito .contador {
+  @apply absolute -top-2 -right-2 bg-red-500 text-white rounded-full w-6 h-6 flex items-center justify-center text-sm;
+}

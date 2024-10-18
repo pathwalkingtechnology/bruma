@@ -3,14 +3,14 @@ import Image from 'next/image';
 
 export default function Header({ carritoCount }) {
   return (
-    <header className="bg-white shadow-md py-4">
+    <header>
       <div className="container mx-auto flex justify-between items-center px-4">
         {/* Logo */}
         <Link href="/">
-          <Image src="/logo-bruma.png" alt="Bruma" width={190} height={80} className="cursor-pointer" />
+          <Image src="/logo-bruma.png" alt="Bruma" width={190} height={80} />
         </Link>
         {/* Menú de navegación */}
-        <nav className="space-x-4">
+        <nav>
           <Link href="/" className="text-lg font-medium hover:text-blue-500 transition">
             Home
           </Link>
@@ -23,9 +23,9 @@ export default function Header({ carritoCount }) {
         </nav>
         {/* Carrito */}
         <Link href="/carrito">
-          <div className="relative">
-            <span className="text-lg font-medium">Carrito</span>
-            <div className="absolute -top-2 -right-2 bg-red-500 text-white rounded-full w-6 h-6 flex items-center justify-center text-sm">
+          <div className="carrito relative">
+            <span>Carrito</span>
+            <div className="contador absolute -top-2 -right-2 bg-red-500 text-white rounded-full w-6 h-6 flex items-center justify-center text-sm">
               {carritoCount}
             </div>
           </div>

@@ -1,0 +1,22 @@
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+footer {
+  @apply bg-[#2281B8] text-white py-6;
+}
+
+footer .container {
+  @apply mx-auto text-center;
+}
+
+footer p {
+  @apply mb-2;
+}
+
+footer a {
+  @apply flex justify-end;
+}
+
+footer img {
+  @apply cursor-pointer;
+}
