@@ -7,7 +7,7 @@ export default function Header({ carritoCount }) {
       <div className="container mx-auto flex justify-between items-center px-4">
         {/* Logo */}
         <Link href="/">
-          <Image src="/logo.png" alt="Logo" width={190} height={80} className="cursor-pointer" />
+          <Image src="/logo-bruma.png" alt="Bruma" width={190} height={80} className="cursor-pointer" />
         </Link>
         {/* Menú de navegación */}
         <nav className="space-x-4">
