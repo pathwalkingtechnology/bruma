@@ -8,7 +8,7 @@ import Hero from '../components/Hero';
 
 export async function getServerSideProps() {
   const { data: productos, error } = await supabase
-    .from('productos')
+    .from('productos_bruma')
     .select('*');
 
   if (error) {
